@@ -1,0 +1,81 @@
+.sale-section {
+  padding: 80px 0;
+  background: var(--light-bg);
+}
+
+.sale-banner {
+  background: linear-gradient(135deg, var(--accent-color) 0%, #c0392b 100%);
+  border-radius: 15px;
+  padding: 60px 40px;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 50px;
+}
+
+.sale-content h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.sale-discount {
+  font-size: 56px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.sale-description {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 15px 40px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  background: var(--white);
+  color: var(--accent-color);
+  font-size: 16px;
+}
+
+.btn-secondary:hover {
+  background: var(--light-bg);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.sale-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .sale-banner {
+    padding: 40px 20px;
+  }
+
+  .sale-content h2 {
+    font-size: 28px;
+  }
+
+  .sale-discount {
+    font-size: 40px;
+  }
+
+  .sale-products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sale-products-grid {
+    grid-template-columns: 1fr;
+  }
+}

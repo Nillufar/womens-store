@@ -1,0 +1,39 @@
+.arriving-soon {
+  padding: 60px 0;
+  background: #faf5ff;
+}
+
+.arriving-soon-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.arriving-soon-subtitle {
+  font-size: 18px;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.arriving-soon-text {
+  font-size: 15px;
+  color: var(--text-muted, #666);
+  line-height: 1.7;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .arriving-soon {
+    padding: 40px 0;
+  }
+
+  .arriving-soon-subtitle {
+    font-size: 16px;
+  }
+
+  .arriving-soon-text {
+    font-size: 14px;
+  }
+}
+
