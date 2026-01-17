@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaTshirt, FaShoePrints } from 'react-icons/fa';
-import { GiClothes, GiLongDress } from 'react-icons/gi';
+import { GiClothes, GiDress } from 'react-icons/gi';
 import './Navigation.css';
 
 interface NavigationProps {
@@ -16,7 +16,7 @@ const Navigation: React.FC<NavigationProps> = ({ isOpen, onClose }) => {
   const categories = [
     { id: 'jeans', name: 'Jeans', icon: FaTshirt },
     { id: 'jackets', name: 'Jackets', icon: GiClothes },
-    { id: 'dresses', name: 'Dresses', icon: GiLongDress },
+    { id: 'dresses', name: 'Dresses', icon: GiDress },
     { id: 'shoes', name: 'Shoes', icon: FaShoePrints },
   ];
 

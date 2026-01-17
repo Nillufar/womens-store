@@ -44,7 +44,8 @@
 }
 
 .btn-secondary:hover {
-  background: var(--light-bg);
+  background: var(--soft-pink);
+  color: var(--white);
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
 }

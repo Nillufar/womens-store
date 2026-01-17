@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaTshirt, FaSearch, FaShoppingBag, FaBars, FaTimes } from 'react-icons/fa';
+import { FaSearch, FaShoppingBag, FaBars, FaTimes } from 'react-icons/fa';
 import { useCart } from '../../context/CartContext';
 import LanguageSelector from './LanguageSelector';
 import Navigation from './Navigation';
@@ -19,8 +19,8 @@ const Header: React.FC = () => {
         <div className="container">
           <div className="header-top-content">
             <div className="logo">
-              <FaTshirt className="logo-icon" />
-              <span>Fashion Store</span>
+              <img src="/images/logo.png" alt="Jamile Store Logo" className="logo-img" />
+              <span className="logo-text">Jamile Store</span>
             </div>
             <div className="header-actions">
               <LanguageSelector />

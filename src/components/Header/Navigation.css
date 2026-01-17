@@ -25,7 +25,7 @@
 }
 
 .nav-link:hover {
-  color: var(--primary-color);
+  color: var(--soft-pink);
 }
 
 .nav-link::after {
@@ -35,7 +35,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--primary-color);
+  background: var(--soft-pink);
   transition: width 0.3s ease;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .category-link:hover {
-  color: var(--primary-color);
+  color: var(--soft-pink);
 }
 
 @media (max-width: 768px) {

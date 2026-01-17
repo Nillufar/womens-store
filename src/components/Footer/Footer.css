@@ -38,7 +38,7 @@
 }
 
 .footer-section ul li a:hover {
-  color: var(--primary-color);
+  color: var(--soft-pink);
 }
 
 .social-links {
@@ -61,7 +61,7 @@
 }
 
 .social-links a:hover {
-  background: var(--primary-color);
+  background: var(--soft-pink);
   transform: translateY(-3px);
 }
 

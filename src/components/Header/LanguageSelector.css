@@ -19,7 +19,8 @@
 }
 
 .lang-btn:hover {
-  background: var(--light-bg);
+  background: var(--soft-pink);
+  color: var(--white);
 }
 
 .lang-btn.active {

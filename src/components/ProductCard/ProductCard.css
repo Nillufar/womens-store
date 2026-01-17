@@ -67,7 +67,7 @@
 
 .quick-view:hover,
 .add-to-cart:hover {
-  background: var(--primary-color);
+  background: var(--soft-pink);
   color: var(--white);
   transform: scale(1.1);
 }
