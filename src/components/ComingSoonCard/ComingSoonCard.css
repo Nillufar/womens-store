@@ -1,0 +1,259 @@
+.coming-soon-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.coming-soon-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.coming-soon-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--soft-pink);
+  color: var(--secondary-color);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.coming-soon-card-image {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: var(--light-bg);
+}
+
+.coming-soon-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coming-soon-slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--secondary-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+
+.coming-soon-card:hover .coming-soon-slider-btn {
+  opacity: 1;
+}
+
+.coming-soon-slider-btn:hover {
+  background: var(--soft-pink);
+  color: var(--white);
+}
+
+.coming-soon-prev {
+  left: 8px;
+}
+
+.coming-soon-next {
+  right: 8px;
+}
+
+.coming-soon-card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.coming-soon-category {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  color: var(--soft-pink);
+  text-transform: uppercase;
+}
+
+.coming-soon-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.coming-soon-description {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+  margin: 0;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.coming-soon-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.coming-soon-star-icon {
+  font-size: 14px;
+  color: #f5a623;
+}
+
+.coming-soon-rating-value {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.coming-soon-rating-reviews {
+  font-size: 11px;
+  color: #888;
+}
+
+.coming-soon-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+.coming-soon-price-current {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+/* Arrival days - clearly in RED */
+.coming-soon-arrival-days {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin: 4px 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.coming-soon-days-value {
+  color: var(--accent-color);
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.coming-soon-options {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.coming-soon-options-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.coming-soon-color-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.coming-soon-color-swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  display: inline-block;
+}
+
+.coming-soon-color-chip {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 500;
+  color: #555;
+  background: #f5f5f5;
+}
+
+.coming-soon-size-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.coming-soon-size-chip {
+  min-width: 28px;
+  height: 26px;
+  padding: 0 6px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--white);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .coming-soon-card-body {
+    padding: 12px;
+    gap: 6px;
+  }
+
+  .coming-soon-name {
+    font-size: 14px;
+  }
+
+  .coming-soon-description,
+  .coming-soon-rating-reviews {
+    font-size: 11px;
+  }
+
+  .coming-soon-price-current {
+    font-size: 16px;
+  }
+
+  .coming-soon-arrival-days {
+    font-size: 12px;
+  }
+
+  .coming-soon-days-value {
+    font-size: 14px;
+  }
+
+  .coming-soon-slider-btn {
+    opacity: 1;
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+  }
+}

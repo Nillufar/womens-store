@@ -1,19 +1,18 @@
 import React from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { FaFacebook, FaInstagram, FaTwitter, FaPinterest } from 'react-icons/fa';
+import { useLocale } from '../../context/LocaleContext';
 import './Footer.css';
 
 const Footer: React.FC = () => {
+  const { t } = useLocale();
   return (
     <footer id="contact" className="footer">
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>About Us</h3>
-            <p>
-              Your premier destination for women's fashion. We offer the latest trends and
-              timeless classics.
-            </p>
+            <h3>{t('aboutUs')}</h3>
+            <p>{t('aboutText')}</p>
             <div className="social-links">
               <a href="#" aria-label="Facebook">
                 <FaFacebook />
@@ -30,44 +29,47 @@ const Footer: React.FC = () => {
             </div>
           </div>
           <div className="footer-section">
-            <h3>Quick Links</h3>
+            <h3>{t('quickLinks')}</h3>
             <ul>
               <li>
-                <a href="#categories">Categories</a>
+                <a href="#products">{t('categories')}</a>
               </li>
               <li>
-                <a href="#sale">Sale</a>
+                <a href="/sale">{t('sale')}</a>
               </li>
               <li>
-                <a href="#arriving-soon">Arriving Soon</a>
-               </li>
-               <li>
-                <a href="#contact">Contact</a>
+                <a href="/cart">{t('cart')}</a>
               </li>
               <li>
-                <a href="#">About</a>
+                <a href="/coming-soon">{t('arrivingSoon')}</a>
+              </li>
+              <li>
+                <a href="#contact">{t('contact')}</a>
+              </li>
+              <li>
+                <a href="#">{t('about')}</a>
               </li>
             </ul>
           </div>
           <div className="footer-section">
-            <h3>Categories</h3>
+            <h3>{t('categories')}</h3>
             <ul>
               <li>
-                <a href="#jeans">Jeans</a>
+                <a href="#jeans">{t('jeans')}</a>
               </li>
               <li>
-                <a href="#jackets">Jackets</a>
+                <a href="#jackets">{t('jackets')}</a>
               </li>
               <li>
-                <a href="#dresses">Dresses</a>
+                <a href="#dresses">{t('dresses')}</a>
               </li>
               <li>
-                <a href="#shoes">Shoes</a>
+                <a href="#shoes">{t('shoes')}</a>
               </li>
             </ul>
           </div>
           <div className="footer-section">
-            <h3>Contact</h3>
+            <h3>{t('contact')}</h3>
             <ul className="contact-info">
               <li>
                 <FaPhone />
@@ -75,7 +77,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <FaEnvelope />
-                <span>info@fashionstore.com</span>
+                <span>info@jamilestore.com</span>
               </li>
               <li>
                 <FaMapMarkerAlt />
@@ -85,7 +87,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2024 Fashion Store. All rights reserved.</p>
+          <p>{t('copyright')}</p>
         </div>
       </div>
     </footer>

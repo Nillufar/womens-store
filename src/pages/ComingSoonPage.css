@@ -1,0 +1,72 @@
+.coming-soon-page {
+  padding: 60px 0 80px;
+  min-height: 60vh;
+  background: var(--light-bg);
+}
+
+.coming-soon-page-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.coming-soon-page-header h1 {
+  font-size: 42px;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.coming-soon-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.coming-soon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .coming-soon-page {
+    padding: 40px 0 60px;
+  }
+
+  .coming-soon-page-header {
+    margin-bottom: 30px;
+  }
+
+  .coming-soon-page-header h1 {
+    font-size: 32px;
+  }
+
+  .coming-soon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .coming-soon-page {
+    padding: 32px 0 50px;
+  }
+
+  .coming-soon-page-header {
+    margin-bottom: 24px;
+  }
+
+  .coming-soon-page-header h1 {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .coming-soon-subtitle {
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+
+  .coming-soon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}

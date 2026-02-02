@@ -28,12 +28,39 @@
     padding: 40px 0;
   }
 
+  .arriving-soon-content {
+    padding: 0 10px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
   .arriving-soon-subtitle {
     font-size: 16px;
   }
 
   .arriving-soon-text {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .arriving-soon {
+    padding: 32px 0;
+  }
+
+  .arriving-soon-content .section-title {
+    font-size: 22px;
+  }
+
+  .arriving-soon-subtitle {
+    font-size: 15px;
+  }
+
+  .arriving-soon-text {
+    font-size: 14px;
+    line-height: 1.6;
   }
 }
 

@@ -1,9 +1,11 @@
 import React from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 import { saleProducts } from '../../data/products';
+import { useLocale } from '../../context/LocaleContext';
 import './SaleSection.css';
 
 const SaleSection: React.FC = () => {
+  const { t } = useLocale();
   const scrollToSaleProducts = () => {
     const saleProductsElement = document.getElementById('sale-products');
     if (saleProductsElement) {
@@ -16,11 +18,11 @@ const SaleSection: React.FC = () => {
       <div className="container">
         <div className="sale-banner">
           <div className="sale-content">
-            <h2>Summer Sale</h2>
-            <p className="sale-discount">Up to 50% OFF</p>
-            <p className="sale-description">Don't miss out on our biggest sale of the year!</p>
+            <h2>{t('summerSale')}</h2>
+            <p className="sale-discount">{t('upTo50Off')}</p>
+            <p className="sale-description">{t('saleDescription')}</p>
             <button className="btn-secondary" onClick={scrollToSaleProducts}>
-              Shop Sale
+              {t('shopSale')}
             </button>
           </div>
         </div>

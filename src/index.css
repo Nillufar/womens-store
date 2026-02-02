@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -32,14 +28,27 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+@media (max-width: 480px) {
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+}
+
 #root {
     min-height: 100vh;
+    padding-bottom: env(safe-area-inset-bottom, 0);
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
 }
 
 /* Smooth Scrolling */

@@ -1,22 +1,21 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
+import { useLocale } from '../../context/LocaleContext';
 import { Language } from '../../types';
+import './LanguageSelector.css';
 
 const LanguageSelector: React.FC = () => {
-  const [currentLang, setCurrentLang] = useState<Language>('en');
+  const { locale, setLocale } = useLocale();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const languages: Language[] = ['en', 'ru', 'uz'];
 
   const handleLanguageChange = (lang: Language) => {
-    setCurrentLang(lang);
+    setLocale(lang);
     setIsOpen(false);
-    // Here you would implement actual language switching logic
-    console.log(`Language changed to: ${lang}`);
   };
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -25,35 +24,32 @@ const LanguageSelector: React.FC = () => {
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   return (
-    <div className="relative inline-block" ref={dropdownRef}>
+    <div className="language-dropdown" ref={dropdownRef}>
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-700 bg-transparent border border-gray-300 rounded-lg transition-all duration-300 hover:bg-[#f8c8dc] hover:border-[#f8c8dc] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#f8c8dc]"
+        className="language-dropdown-btn"
         aria-label="Select language"
         aria-expanded={isOpen}
       >
-        <span>{currentLang.toUpperCase()}</span>
-        <FaChevronDown 
-          className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
-          size={12}
-        />
+        <span>{locale.toUpperCase()}</span>
+        <FaChevronDown className={`language-dropdown-chevron ${isOpen ? 'open' : ''}`} size={12} />
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden z-50 animate-fadeIn">
+        <div className="language-dropdown-menu">
           {languages
-            .filter((lang) => lang !== currentLang)
+            .filter((lang) => lang !== locale)
             .map((lang) => (
               <button
                 key={lang}
+                type="button"
                 onClick={() => handleLanguageChange(lang)}
-                className="w-full px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-[#f8c8dc] hover:text-white transition-colors duration-200 text-left first:border-t-0 border-t border-gray-100"
+                className="language-dropdown-item"
                 aria-label={`Switch to ${lang.toUpperCase()}`}
               >
                 {lang.toUpperCase()}

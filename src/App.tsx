@@ -1,25 +1,27 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
-import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero';
-import FeaturedProducts from './components/FeaturedProducts/FeaturedProducts';
-import SaleSection from './components/SaleSection/SaleSection';
-import ArrivingSoon from './components/ArrivingSoon/ArrivingSoon';
-import Footer from './components/Footer/Footer';
+import { LocaleProvider } from './context/LocaleContext';
+import HomePage from './pages/HomePage';
+import SalePage from './pages/SalePage';
+import CartPage from './pages/CartPage';
+import ComingSoonPage from './pages/ComingSoonPage';
 import './App.css';
 
 const App: React.FC = () => {
   return (
+    <LocaleProvider>
     <CartProvider>
       <div className="App">
-        <Header />
-        <Hero />
-        <FeaturedProducts />
-        <SaleSection />
-        <ArrivingSoon />
-        <Footer />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/sale" element={<SalePage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/coming-soon" element={<ComingSoonPage />} />
+        </Routes>
       </div>
     </CartProvider>
+    </LocaleProvider>
   );
 };
 
